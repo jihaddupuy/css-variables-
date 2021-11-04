@@ -18,9 +18,20 @@
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  <img src="https://unsplash.com/photos/O84_bYe3idQ">
 
   <style>
+    :root{
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+      ;
+    }
+    img{
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
 
     /*
       misc styles, nothing to do with CSS variables
@@ -45,6 +56,14 @@
   </style>
 
   <script>
+const imputs = document.querySelectorAll('.controls imput');
+function handleUpdate(){
+  console.log(this.value);
+}
+
+imputs.forEach(input => input.addEventListener('change', hadleUpdate));
+imputs.forEach(input => input.addEventListener('mouse', hadleUpdate));
+
   </script>
 
 </body>
