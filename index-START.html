@@ -57,8 +57,11 @@
 
   <script>
 const imputs = document.querySelectorAll('.controls imput');
+
 function handleUpdate(){
-  console.log(this.value);
+  const suffix = this.dataset.sizing || '';
+  document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+  
 }
 
 imputs.forEach(input => input.addEventListener('change', hadleUpdate));
